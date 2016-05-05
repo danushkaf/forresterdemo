@@ -116,9 +116,9 @@
                                 <argument>-F</argument>
                                 <argument>action=createApplication</argument>
                                 <argument>-F</argument>
-                                <argument>applicationName=buzzapp</argument>
+                                <argument>applicationName=API&#x20;Producer</argument>
                                 <argument>-F</argument>
-                                <argument>applicationDescription=buzzapplication</argument>
+                                <argument>applicationDescription=API&#x20;Producer&#x20;application&#x20;for&#x20;buzzword&#x20;sample</argument>
                                 <argument>-F</argument>
                                 <argument>conSpecMemory=600</argument>
                                 <argument>-F</argument>
