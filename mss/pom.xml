@@ -63,6 +63,21 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.6</version>
         </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.5.8</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-core</artifactId>
+            <version>1.5.8</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-jaxrs</artifactId>
+            <version>1.5.8</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -116,7 +131,7 @@
                                 <argument>-F</argument>
                                 <argument>action=createApplication</argument>
                                 <argument>-F</argument>
-                                <argument>applicationName=API&#x20;Producer</argument>
+                                <argument>applicationName=Buzzwords&#x20;Backend</argument>
                                 <argument>-F</argument>
                                 <argument>applicationDescription=API&#x20;Producer&#x20;application&#x20;for&#x20;buzzword&#x20;sample</argument>
                                 <argument>-F</argument>
@@ -128,7 +143,7 @@
                                 <argument>-F</argument>
                                 <argument>appTypeName=mss</argument>
                                 <argument>-F</argument>
-                                <argument>applicationRevision=1.0.0</argument>
+                                <argument>applicationRevision=2.0.0</argument>
                                 <argument>-F</argument>
                                 <argument>uploadedFileName=${artifactId}-${version}.jar</argument>
                                 <argument>-F</argument>
@@ -139,6 +154,8 @@
                                 <argument>fileupload=@${project.build.directory}/${artifactId}-${version}.jar</argument>
                                 <argument>-F</argument>
                                 <argument>isFileAttached=true</argument>
+                                <argument>-F</argument>
+                                <argument>isNewVersion=true</argument>
                             </arguments>
                         </configuration>
                     </execution>

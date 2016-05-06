@@ -27,13 +27,33 @@ import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.Contact;
+import io.swagger.annotations.Info;
+import io.swagger.annotations.License;
+import io.swagger.annotations.SwaggerDefinition;
+
 
 /**
  * This class is the main class that handles the business logic of the
  * Micro Service. This does all the HTTP request processing and retrieve the
  * requested data from the database
  */
-
+@Api(value = "buzzword")
+@SwaggerDefinition(
+		info = @Info(
+				title = "Buzzword Swagger Definition", version = "1.0",
+				description = "Buzzword MSF4J service",
+				license = @License(name = "Apache 2.0", url = "http://www.apache.org/licenses/LICENSE-2.0"),
+				contact = @Contact(
+						name = "Danushka Fernando",
+						email = "danushkaf@wso2.com",
+						url = "http://wso2.com"
+				))
+)
 @Path("/buzzword")
 public class BuzzWordManager {
 
@@ -49,6 +69,9 @@ public class BuzzWordManager {
      */
     @POST
     @Path("/{word}")
+    @ApiOperation(
+		    value = "Add new buzzwords",
+		    notes = "Add given buzzword")
     public void addBuzzWords(@PathParam("word") String word) throws SQLException {
         Connection conn=null;
         PreparedStatement preparedStatement=null;
@@ -78,6 +101,10 @@ public class BuzzWordManager {
      */
     @GET
     @Path("/{regex}")
+    @ApiOperation(
+		    value = "Returns buzzwords for given regex",
+		    notes = "Returns HTTP 500 if error occurred",
+		    responseContainer = "HashMap")
     public Map getBuzzWords(@PathParam("regex") String regex) throws SQLException {
         Map buzzWordList = new HashMap();
         Connection conn = null;
@@ -117,6 +144,10 @@ public class BuzzWordManager {
      */
     @GET
     @Path("/all")
+    @ApiOperation(
+		    value = "Returns all buzzwords",
+		    notes = "Returns HTTP 500 if error occurred",
+		    responseContainer = "HashMap")
     public Map getAllBuzzWords() throws SQLException {
         Map buzzWordList = new HashMap();
         Connection conn = null;
@@ -157,6 +188,10 @@ public class BuzzWordManager {
      */
     @GET
     @Path("/mostPopular")
+    @ApiOperation(
+		    value = "Returns most popular 10 buzzwords",
+		    notes = "Returns HTTP 500 if error occurred",
+		    responseContainer = "HashMap")
     public Map getMostPopularBuzzWords() throws SQLException {
         Map buzzWordList = new HashMap();
         Connection conn = null;
