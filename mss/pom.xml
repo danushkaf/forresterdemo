@@ -135,7 +135,7 @@
                                 <argument>-F</argument>
                                 <argument>applicationDescription=API&#x20;Producer&#x20;application&#x20;for&#x20;buzzword&#x20;sample</argument>
                                 <argument>-F</argument>
-                                <argument>conSpecMemory=600</argument>
+                                <argument>conSpecMemory=512</argument>
                                 <argument>-F</argument>
                                 <argument>conSpecCpu=300</argument>
                                 <argument>-F</argument>

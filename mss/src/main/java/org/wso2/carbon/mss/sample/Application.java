@@ -1,4 +1,5 @@
-package org.wso2.carbon.mss.sample;/*
+package org.wso2.carbon.mss.sample;
+/*
 *Copyright (c) 2005-2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
 *
 *WSO2 Inc. licenses this file to you under the Apache License,

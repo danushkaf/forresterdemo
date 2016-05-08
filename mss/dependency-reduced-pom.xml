@@ -66,7 +66,7 @@
                 <argument>-F</argument>
                 <argument>applicationDescription=API Producer application for buzzword sample</argument>
                 <argument>-F</argument>
-                <argument>conSpecMemory=600</argument>
+                <argument>conSpecMemory=512</argument>
                 <argument>-F</argument>
                 <argument>conSpecCpu=300</argument>
                 <argument>-F</argument>
@@ -74,7 +74,7 @@
                 <argument>-F</argument>
                 <argument>appTypeName=mss</argument>
                 <argument>-F</argument>
-                <argument>applicationRevision=2.0.0</argument>
+                <argument>applicationRevision=1.0.0</argument>
                 <argument>-F</argument>
                 <argument>uploadedFileName=${artifactId}-${version}.jar</argument>
                 <argument>-F</argument>
@@ -86,7 +86,7 @@
                 <argument>-F</argument>
                 <argument>isFileAttached=true</argument>
                 <argument>-F</argument>
-                <argument>isNewVersion=true</argument>
+                <argument>isNewVersion=false</argument>
               </arguments>
             </configuration>
           </execution>
