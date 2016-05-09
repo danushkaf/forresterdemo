@@ -342,11 +342,11 @@
                                 <argument>-F</argument>
                                 <argument>appTypeName=war</argument>
                                 <argument>-F</argument>
-                                <argument>applicationRevision=1.0.0</argument>
+                                <argument>applicationRevision=1.0.1</argument>
                                 <argument>-F</argument>
                                 <argument>uploadedFileName=${artifactId}-${version}.war</argument>
                                 <argument>-F</argument>
-                                <argument>runtimeProperties=[{"key":"API_CONSUMER_SECRET","value":"jufGfSPfnPFnKt4qqT30DEUjT8mka"},{"key":"API_CONSUMER_KEY","value":"Myrl7yCt5q_3a5BiqzObfHp0gpEa"},{"key":"API_ENDPOINT_URL","value":"http://gateway.api.cloud.wso2.com/t/danushkaorg/buzzwordservice/1.0.0/all"},{"key":"API_MANAGER_URL","value":"http://gateway.api.cloud.wso2.com"}]</argument>
+                                <argument>runtimeProperties=[{"key":"API_CONSUMER_SECRET","value":"ufGfSPfnPFnKt4qqT30DEUjT8mka"},{"key":"API_CONSUMER_KEY","value":"Myrl7yCt5q_3a5BiqzObfHp0gpEa"},{"key":"API_ENDPOINT_URL","value":"http://gateway.api.cloud.wso2.com/t/danushkaorg/buzzwordsapi/1.0.0/buzzword/all"},{"key":"API_MANAGER_URL","value":"http://gateway.api.cloud.wso2.com"}]</argument>
                                 <argument>-F</argument>
                                 <argument>tags=[]</argument>
                                 <argument>-F</argument>

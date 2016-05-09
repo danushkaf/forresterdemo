@@ -47,7 +47,7 @@
 </head>
 <body>
 <% Logger logger = Logger.getLogger(this.getClass().getName());%>
-<h1 style="text-align: center">Buzzword Cloud</h1>
+<h1 style="text-align: center">Buzzwords Demonstration</h1>
 <div id="myCanvasContainer"  style="background-image: url(AppCloudBanner.png); background-repeat: no-repeat;">
     <canvas width="1400" height="800" id="myCanvas">
         <p>Anything in here will be replaced on browsers that support the canvas element</p>

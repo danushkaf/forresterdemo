@@ -69,7 +69,7 @@ public class BuzzWordManager {
      * @param word the new buzzword.
      */
     @POST
-    @Path("/{word}")
+    @Path("/add/{word}")
     @ApiOperation(
 		    value = "Add new buzzwords",
 		    notes = "Add given buzzword")
