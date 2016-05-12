@@ -15,12 +15,51 @@
     <plugins>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.10</version>
+        <executions>
+          <execution>
+            <id>parse-version</id>
+            <phase>deploy</phase>
+            <goals>
+              <goal>parse-version</goal>
+            </goals>
+            <configuration>
+              <versionString>${appcloud.version}</versionString>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.google.code.maven-replacer-plugin</groupId>
+        <artifactId>replacer</artifactId>
+        <version>1.5.3</version>
+        <executions>
+          <execution>
+            <phase>deploy</phase>
+            <goals>
+              <goal>replace</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <file>pom.xml</file>
+          <replacements>
+            <replacement>
+              <token>${appcloud.version}</token>
+              <value>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.nextIncrementalVersion}</value>
+            </replacement>
+          </replacements>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.2</version>
         <executions>
           <execution>
             <id>login</id>
-            <phase>package</phase>
+            <phase>deploy</phase>
             <goals>
               <goal>exec</goal>
             </goals>
@@ -45,7 +84,7 @@
           </execution>
           <execution>
             <id>create application</id>
-            <phase>package</phase>
+            <phase>deploy</phase>
             <goals>
               <goal>exec</goal>
             </goals>
@@ -74,7 +113,7 @@
                 <argument>-F</argument>
                 <argument>appTypeName=mss</argument>
                 <argument>-F</argument>
-                <argument>applicationRevision=1.0.0</argument>
+                <argument>applicationRevision=${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.nextIncrementalVersion}</argument>
                 <argument>-F</argument>
                 <argument>uploadedFileName=${artifactId}-${version}.jar</argument>
                 <argument>-F</argument>
@@ -86,15 +125,23 @@
                 <argument>-F</argument>
                 <argument>isFileAttached=true</argument>
                 <argument>-F</argument>
-                <argument>isNewVersion=false</argument>
+                <argument>isNewVersion=true</argument>
               </arguments>
             </configuration>
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.7</version>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
   <properties>
+    <appcloud.version>1.0.6</appcloud.version>
     <microservice.mainClass>org.wso2.carbon.mss.sample.Application</microservice.mainClass>
   </properties>
 </project>
